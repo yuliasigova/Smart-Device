@@ -9,10 +9,79 @@
 </head>
 
 <body>
-  <header>
-    <section>
+  <header class="header">
+    <nav class="header__nav nav">
+      <div class="nav__wrapper container">
+        <a>
+          <picture>
+            <source media="(max-width: 767px)" srcset="img/svg/logo-mobile.svg">
+            <source media="(max-width: 1023px)" srcset="img/svg/logo-tablet.svg">
+            <img src="img/svg/logo-desktop.svg" width="215" height="55" alt="Лого сайта">
+          </picture>
+        </a>
+        <ul>
+          <li>
+            <a class="nav__link nav__link--mail" href="mailto:info@sd.ru">
+              <span>info@sd.ru</span></a>
+          </li>
+          <li>
+            <a class="nav__link nav__link--phone" href="tel:84950005252">
+              <span>+7 (495) 000-52-52</span></a>
+          </li>
+        </ul>
+        <a class="nav__button" href="#">Заказать звонок</a>
+      </div>
+    </nav>
+    <section class="caption container">
       <h1>Печатные платы</h1>
+      <p>производство и&nbsp;монтаж, поставка комплектующих, блоков и&nbsp;модулей</p>
+      <a href="#">
+        <span class="caption__link caption__link--desktop">Получить бесплатную консультацию</span>
+        <span class="caption__link caption__link--mobile">Бесплатная консультация</span>
+      </a>
     </section>
   </header>
+  <main>
+    <section class="advantage container">
+      <h2 class="visually-hidden">Наши преимущества</h2>
+      <ul>
+        <li tabindex="0">
+          <article class="advantage__card">
+            <h3> Оперативные сроки</h3>
+            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и доставлять заказы плат и комплектующих в самые короткие сроки</p>
+          </article>
+        </li>
+        <li tabindex="0">
+          <article class="advantage__card">
+            <h3> Крупные поставщики</h3>
+            <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND. Сотрудничество с такими компаниями обеспичивает хорошее качество нашей продукции.
+            </p>
+          </article>
+        </li>
+        <li tabindex="0">
+          <article class="advantage__card">
+            <h3> Полная конфиденциальность </h3>
+            <p>По желанию клиента  мы обеспечиваем полную конфеденциальность. </p>
+          </article>
+        </li>
+        <li tabindex="0">
+          <article class="advantage__card">
+            <h3> Персонализация стоимости</h3>
+            <p>Мы  подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас устраивает.</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>О компании</h2>
+      <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997 года. Выполняем срочные заказы и пилотные образцы до 10 дней.
+      </p>
+      <p>
+        Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.
+      </p>
+      <a>Подробнее</a>
+    </section>
+  </main>
 </body>
+
 </html>

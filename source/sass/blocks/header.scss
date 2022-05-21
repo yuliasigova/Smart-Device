@@ -1,0 +1,68 @@
+.header {
+  min-height: 880px;
+  background: url("../../img/background-desktop.jpg") center center no-repeat;
+
+  @media (min-resolution: 2dppx) and (min-width: 1024px) {
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    url("../img/background-desktop@2x.jpg") center center no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    image-set(url("../img/background-desktop@2x.webp") 2x) center center no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: $vp-1023) {
+    min-height: 640px;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    url("../img/background-tablet.jpg") center center no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    image-set(url("../img/background-tablet.webp") 1x) center center no-repeat;
+    background-size: cover;
+  }
+
+  @media (min-resolution: 2dppx) and (max-width: $vp-1023) {
+    min-height: 640px;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    url("../img/background-tablet@2x.jpg") center center no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    image-set(url("../img/background-tablet@2x.webp") 2x) center center no-repeat;
+    background-size: cover;
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 560px;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    url("../img/background-mobile.jpg") center center no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    image-set(url("../img/background-mobile.webp") 1x) center center no-repeat;
+    background-size: cover;
+  }
+
+  @media (min-resolution: 2dppx) and (max-width: $vp-767) {
+    min-height: 560px;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    url("../img/background-mobile@2x.jpg") center center no-repeat;
+    background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%),
+    image-set(url("../img/background-mobile@2x.webp") 2x) center center no-repeat;
+    background-size: cover;
+  }
+}
+
+.header__nav {
+  min-height: 120px;
+  background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
+
+  @media (max-width: $vp-1023) {
+    min-height: 100px;
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 70px;
+  }
+}
+
+.header img {
+  @media (max-width: $vp-767) {
+    width: 35px;
+    height: 35px;
+  }
+}
