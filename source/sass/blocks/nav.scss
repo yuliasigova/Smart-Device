@@ -1,3 +1,11 @@
+// .nav {
+//   @media (min-width: 1024px) {
+//     position: fixed;
+//     width: 100%;
+//     z-index: 3;
+//   }
+// }
+
 .nav__wrapper {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -43,13 +51,13 @@
   color: $color-alice-blue;
 
   @media (max-width: $vp-767) {
-   align-self: center;
+    align-self: center;
   }
 }
 
 .nav__link {
   line-height: 18px;
-  padding-left: 35px;
+  padding-left: 44px;
   position: relative;
 
   &--mail {
@@ -59,10 +67,10 @@
       width: 20px;
       height: 20px;
       top: 0;
-      left: 0;
+      left: 11px;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url("../../img/svg/mail.svg");
+      background-image: url("../img/svg/mail.svg");
     }
   }
 
@@ -73,11 +81,16 @@
       width: 20px;
       height: 20px;
       top: 0;
-      left: 0;
+      left: 8px;
       background-repeat: no-repeat;
       background-position: center;
-      background-image: url("../../img/svg/phone.svg");
+      background-image: url("../img/svg/phone.svg");
     }
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
   }
 }
 
@@ -97,10 +110,16 @@
   @media (max-width: $vp-1023) {
     display: none;
   }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+    border: 1px solid $color-deep-sky-blue;
+  }
 }
 
 .nav__link span {
   @media (max-width: $vp-1023) {
-  display: none;
+    display: none;
   }
 }

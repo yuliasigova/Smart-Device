@@ -1,0 +1,113 @@
+.application {
+  background-color: $color-deep-sky;
+  padding-top: 164px;
+  padding-bottom: 248px;
+  color: $color-alice-blue;
+  position: relative;
+  overflow: hidden;
+
+  @media (min-width: 1024px) {
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/svg/polygon.svg");
+      width: 200%;
+      height: 200%;
+      top: -87px;
+      left: 0;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: image-set(
+        url("../img/paper-airplane2x.webp") 2x,
+        url("../img/paper-airplane.webp") 1x,
+        url("../img/paper-airplane2x.png") 2x,
+        url("../img/paper-airplane.png") 1x,
+      );
+      width: 510px;
+      height: 285px;
+      top: 29%;
+      right: 55%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  @media (max-width: $vp-1023) {
+    padding-top: 45px;
+    padding-bottom: 125px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-top: 47px;
+    padding-bottom: 89px;
+  }
+}
+
+.application__wrapper {
+  display: grid;
+  justify-content: right;
+  padding-right: 11px;
+
+  @media (max-width: $vp-1023) {
+    justify-content: left;
+  }
+
+  @media (max-width: $vp-767) {
+    display: block;
+  }
+}
+
+.application h2 {
+  margin: 0;
+  font-family: $ff-roboto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin-bottom: 15px;
+
+  @media (max-width: $vp-1023) {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 30px;
+    line-height: 42px;
+  }
+}
+
+.application p {
+  margin: 0;
+  margin-bottom: 35px;
+
+  @media (max-width: $vp-1023) {
+    margin-bottom: 25px;
+  }
+
+  @media (max-width: $vp-767) {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 33px;
+  }
+}
+
+.application__form {
+  width: 585px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  padding-left: 5px;
+
+  @media (max-width: $vp-1023) {
+     width: 670px;
+     padding-left: 0;
+  }
+
+  @media (max-width: $vp-767) {
+    width: 270px;
+    margin: 0 auto;
+  }
+}

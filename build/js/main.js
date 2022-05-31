@@ -93,7 +93,78 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
+var descriptionBox = document.querySelector('.description__box');
+var descriptionContainer = document.querySelector('.description__container');
+document.body.addEventListener('click', function (evt) {
+  var button = document.querySelector('[data-description]');
 
+  if (evt.target === button) {
+    evt.preventDefault();
+    descriptionBox.classList.toggle('is-active');
+    descriptionContainer.classList.toggle('is-active');
+  }
+});
+
+var menuClick = function menuClick() {
+  var menu = document.querySelectorAll('[data-menu]');
+  var buttonsMenu = document.querySelectorAll('[data-button]');
+  var footer = document.querySelector('.footer');
+  footer.addEventListener('click', function (evt) {
+    if (evt.target.type === 'button') {
+      var buttonActive = evt.target;
+      var menuActive = evt.target.closest('[data-menu]');
+
+      if (buttonActive.classList.contains('is-close')) {
+        buttonActive.classList.remove('is-close');
+        buttonActive.classList.add('is-active');
+      } else {
+        buttonActive.classList.remove('is-active');
+        buttonActive.classList.add('is-close');
+      }
+
+      menu.forEach(function (list) {
+        if (list.classList.contains('is-active') && !menuActive.classList.contains('is-active')) {
+          list.classList.remove('is-active');
+          buttonsMenu.forEach(function (button) {
+            if (button.classList.contains('is-active') && buttonActive.classList.contains('is-active')) {
+              button.classList.remove('is-active');
+              button.classList.add('is-close');
+              buttonActive.classList.remove('is-close');
+              buttonActive.classList.add('is-active');
+            }
+          });
+        }
+      });
+      menuActive.classList.toggle('is-active');
+    }
+  });
+};
+
+menuClick();
+
+var openPopup = function openPopup() {
+  var buttonPopup = document.querySelector('[data-navButton]');
+  var popup = document.querySelector('.modal');
+  var button = popup.querySelector('[data-modal]');
+  var inputText = popup.querySelector('[data-modalInput]');
+
+  if (buttonPopup) {
+    buttonPopup.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      popup.classList.add('is-active');
+      inputText.focus(); // document.body.classList.add('body--overlay');
+
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  button.addEventListener('click', function () {
+    popup.classList.remove('is-active');
+    document.body.style.overflow = 'auto';
+  });
+};
+
+openPopup();
 
 /***/ })
 

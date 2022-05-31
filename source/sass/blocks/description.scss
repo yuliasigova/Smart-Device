@@ -1,0 +1,121 @@
+.description {
+  margin-top: 120px;
+
+  @media (max-width: $vp-1023) {
+    margin-top: 75px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 48px;
+  }
+}
+
+.description__wrapper {
+  padding-left: 250px;
+  background: image-set(
+    url("../img/2022@2x.webp") 2x,
+    url("../img/2022.webp") 1x,
+    url("../img/2022@2x.png") 2x,
+    url("../img/2022.png") 1x,
+    );
+  background-size: 150px 320px;
+  padding-bottom: 20px;
+  background-position: left top;
+  background-repeat: no-repeat;
+
+  @media (max-width: $vp-1023) {
+    padding-left: 176px;
+    background-position: -4px 6px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-left: 0;
+    background-image: none;
+  }
+}
+
+.description h2 {
+  font-family: $ff-roboto;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0;
+  margin-bottom: 11px;
+
+  @media (max-width: $vp-767) {
+    font-size: 28px;
+    line-height: 39px;
+  }
+}
+
+.description p {
+  margin: 0;
+
+  @media (max-width: $vp-767) {
+    font-size: 14px;
+    line-height: 19px;
+  }
+}
+
+.description a {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  display: block;
+  font-family: $ff-roboto;
+  color: $color-deep-sky-blue;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  border: 1px solid $color-deep-sky-blue;
+  padding: 13px 20px;
+  width: 180px;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  @media (max-width: $vp-1023) {
+    margin-top: 17px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding: 9px 20px;
+    margin-top: 14px;
+    width: 160px;
+  }
+  
+  &:hover,
+  &:focus {
+    color: $color-alice-blue;
+    background: $color-deep-sky-blue ;
+  }
+}
+
+.description__box {
+  display: none;
+}
+
+.description__box.is-active,
+.description__box.no-js {
+  display: block;
+  margin-top: 20px;
+}
+
+.description p:first-child {
+  margin-bottom: 22px;
+
+  @media (max-width: $vp-767) {
+    margin-bottom: 17px;
+  }
+}
+
+.description__container p:last-child {
+  @media (max-width: $vp-767) {
+    display: none;
+  }
+}
+
+.description__container.is-active p:last-child {
+  @media (max-width: $vp-767) {
+    display: block;
+  }
+}

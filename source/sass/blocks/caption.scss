@@ -1,10 +1,16 @@
 .caption {
   color: $color-alice-blue;
-  margin-top: 185px;
+  padding-top: 185px;
   padding-left: 125px;
+  min-height: 760px;
 
   @media (max-width: $vp-1023) {
-    margin-top: 81px;
+    padding-top: 81px;
+    min-height: 540px;
+  }
+
+  @media (max-width: $vp-767) {
+    min-height: 490px;
   }
 }
 
@@ -25,6 +31,7 @@
   @media (max-width: $vp-767) {
     font-size: 36px;
     line-height: 42px;
+    margin-bottom: 7px;
   }
 }
 
@@ -45,7 +52,6 @@
   @media (max-width: $vp-767) {
     font-size: 14px;
     line-height: 22px;
-    margin-top: 7px;
     margin-bottom: 45px;
   }
 }
@@ -77,12 +83,18 @@
     width: 270px;
     margin-left: 0;
   }
+
+  &:hover,
+  &:focus {
+    color: $color-deep-sky-blue;
+    background: $color-alice-blue;
+  }
 }
 
 .caption__link {
   &--desktop {
     @media (max-width: $vp-767) {
-     display: none;
+      display: none;
     }
   }
 

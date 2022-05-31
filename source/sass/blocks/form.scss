@@ -1,0 +1,150 @@
+.form__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 20px;
+  gap: 30px;
+
+  @media (max-width: $vp-767) {
+    grid-template-columns: 1fr;
+    gap: 23px;
+  }
+}
+
+.form input[type="text"] {
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: $color-black-pearl--15;
+  min-width: 100%;
+
+  &::placeholder {
+    line-height: 22px;
+    color: $color-white;
+  }
+}
+
+.form input[type="tel"] {
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: $color-black-pearl--15;
+  min-width: 100%;
+
+  &::placeholder {
+    line-height: 22px;
+    color: $color-white;
+  }
+}
+
+.form textarea {
+  padding: 25px 15px;
+  background-color: $color-black-pearl--15;
+  min-width: 100%;
+  min-height: 155px;
+  margin-bottom: 27px;
+  border: none;
+  border-radius: 3px;
+
+  @media (max-width: $vp-1023) {
+    padding-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: $vp-767) {
+    padding-top: 24px;
+    min-height: 180px;
+    margin-bottom: 26px;
+  }
+
+  &::placeholder {
+    line-height: 22px;
+    color: $color-white;
+  }
+}
+
+.form__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  @media (max-width: $vp-1023) {
+    grid-template-columns: 265px 1fr;
+    gap: 85px;
+  }
+
+  @media (max-width: $vp-767) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.form button {
+  font-family: $ff-roboto;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $color-white;
+  border: none;
+  background-color: $color-black-pearl;
+  padding: 13px 25px;
+  order: -1;
+  border-radius: 3px;
+  width: 100%;
+
+  @media (max-width: $vp-1023) {
+    padding-bottom: 11px;
+  }
+
+  &:hover,
+  &:focus {
+   opacity: 0.8;
+  }
+}
+
+.form__container label {
+  display: flex;
+  align-items: center;
+  padding-top: 17px;
+
+  @media (max-width: $vp-767) {
+    padding-left: 6px;
+  }
+}
+
+.form span {
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-white;
+  display: block;
+  align-self: end;
+
+  @media (max-width: $vp-1023) {
+    align-self: center;
+  }
+}
+
+.form input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-bottom: 0;
+  appearance: none;
+  cursor: auto;
+  border: 1px solid $color-white;
+  border-radius: 2px;
+  margin-right: 11px;
+
+  @media (max-width: $vp-767) {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.form input[type="checkbox"]:checked {
+  background-image: url("../img/svg/tick.svg");
+  background-repeat: no-repeat;
+  background-size: 11px;
+  background-position: center;
+}
