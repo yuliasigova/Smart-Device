@@ -115,3 +115,28 @@
     height: 30px;
   }
 }
+
+.advantage li:last-child h3 {
+  @media (max-width: $vp-1023) {
+    margin-top: 3px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: $vp-767) {
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+}
+
+.advantage li:last-child p {
+  @media (max-width: $vp-767) {
+    padding-right: 10px;
+  }
+}
+
+.advantage li:nth-child(3) h3 {
+  @media (max-width: $vp-767) {
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+}

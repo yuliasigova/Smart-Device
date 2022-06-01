@@ -82,11 +82,11 @@
     margin-top: 14px;
     width: 160px;
   }
-  
+
   &:hover,
   &:focus {
     color: $color-alice-blue;
-    background: $color-deep-sky-blue ;
+    background: $color-deep-sky-blue;
   }
 }
 
@@ -114,7 +114,8 @@
   }
 }
 
-.description__container.is-active p:last-child {
+.description__container.is-active p:last-child,
+.description__container.no-js p:last-child {
   @media (max-width: $vp-767) {
     display: block;
   }

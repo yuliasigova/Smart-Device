@@ -29,7 +29,6 @@
     font-size: 14px;
     line-height: 19px;
     margin-bottom: 18px;
-    display: none;
   }
 }
 
@@ -37,10 +36,6 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @media (max-width: $vp-767) {
-    display: none;
-  }
 }
 
 .contacts a {
@@ -57,5 +52,11 @@
   &:hover,
   &:focus {
     opacity: 0.6;
+  }
+}
+
+.contacts__list {
+  @media (max-width: $vp-767) {
+    display: none;
   }
 }

@@ -48,6 +48,7 @@
     "gulp-sourcemaps": "2.6.5",
     "gulp-svgstore": "7.0.1",
     "gulp-webp": "4.0.1",
+    "imask": "6.4.2",
     "sass": "1.50.1",
     "stylelint": "13.13.1",
     "webpack": "4.42.0",

@@ -568,7 +568,7 @@ button,
   content: "";
   position: absolute;
   width: 100%;
-  min-height: 880px;
+  min-height: 760px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(71.72%, rgba(25, 32, 36, 0.7)), to(rgba(25, 32, 36, 0))), image-set(url("../img/background-desktop@2x.webp") 2x, url("../img/background-desktop.webp") 1x, url("../img/background-desktop@2x.jpg") 2x, url("../img/background-desktop.jpg") 1x);
   background: -o-linear-gradient(top, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), image-set(url("../img/background-desktop@2x.webp") 2x, url("../img/background-desktop.webp") 1x, url("../img/background-desktop@2x.jpg") 2x, url("../img/background-desktop.jpg") 1x);
   background: linear-gradient(180deg, rgba(25, 32, 36, 0.7) 71.72%, rgba(25, 32, 36, 0) 100%), -webkit-image-set(url("../img/background-desktop@2x.webp") 2x, url("../img/background-desktop.webp") 1x, url("../img/background-desktop@2x.jpg") 2x, url("../img/background-desktop.jpg") 1x);
@@ -1207,15 +1207,12 @@ button,
   margin: 0;
 }
 
-[data-button=button].is-close {
+[data-menu-button] {
   display: none;
 }
 
-[data-menu=menu].is-active ul {
-  display: block;
-}
-
-[data-menu=menu].is-active address {
+[data-menu-list].is-active,
+[data-menu-list].no-js {
   display: block;
 }
 
@@ -1307,7 +1304,7 @@ button,
   opacity: 0.6;
 }
 
-.modal {
+.modal__container {
   display: none;
   position: absolute;
   width: 500px;
@@ -1321,6 +1318,7 @@ button,
   padding: 40px;
   color: #ffffff;
   top: 136px;
+  z-index: 3;
 }
 
 .modal h2 {
@@ -1383,22 +1381,28 @@ button,
   padding-left: 10px;
 }
 
-.modal.is-active {
+.modal__container.is-active {
   display: block;
 }
 
-.body--overlay {
+.modal__overlay {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(3, 16, 27, 0.7);
 }
 
 @media (min-width: 1024px) {
+  .nav {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+
   .application::before {
     content: "";
     position: absolute;
@@ -1456,7 +1460,7 @@ button,
   }
 
   .nav__wrapper ul {
-    padding-right: 11px;
+    padding-right: 19px;
     padding-left: 6vw;
     grid-template-columns: repeat(auto-fit, 40px);
     gap: 20px;
@@ -1506,6 +1510,11 @@ button,
   .advantage__card h3 {
     margin-top: 7px;
     margin-bottom: 8px;
+  }
+
+  .advantage li:last-child h3 {
+    margin-top: 3px;
+    margin-bottom: 5px;
   }
 
   .description {
@@ -1756,6 +1765,20 @@ button,
     height: 30px;
   }
 
+  .advantage li:last-child h3 {
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
+  .advantage li:last-child p {
+    padding-right: 10px;
+  }
+
+  .advantage li:nth-child(3) h3 {
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+
   .description {
     margin-top: 48px;
   }
@@ -1789,7 +1812,8 @@ button,
     display: none;
   }
 
-  .description__container.is-active p:last-child {
+  .description__container.is-active p:last-child,
+  .description__container.no-js p:last-child {
     display: block;
   }
 
@@ -1896,7 +1920,7 @@ button,
     grid-template-columns: 1fr;
   }
 
-  [data-button=button].is-close {
+  [data-menu-button] {
     display: block;
     position: absolute;
     width: 15px;
@@ -1909,8 +1933,8 @@ button,
     padding: 15px;
   }
 
-  [data-button=button].is-close::before,
-  [data-button=button].is-close::after {
+  [data-menu-button]::before,
+  [data-menu-button]::after {
     content: "";
     position: absolute;
     width: 15px;
@@ -1920,13 +1944,14 @@ button,
     right: 10px;
   }
 
-  [data-button=button].is-close::after {
+  [data-menu-button]::after {
     -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
   }
 
-  [data-button=button].is-active {
+  [data-menu-button].is-active,
+  [data-menu-button].no-js {
     display: block;
     position: absolute;
     width: 15px;
@@ -1939,7 +1964,8 @@ button,
     padding: 15px;
   }
 
-  [data-button=button].is-active::before {
+  [data-menu-button].is-active::before,
+  [data-menu-button].no-js::before {
     content: "";
     position: absolute;
     width: 15px;
@@ -1947,6 +1973,11 @@ button,
     background-color: #f8fdff;
     top: 4px;
     right: 10px;
+  }
+
+  [data-menu-button].is-active::after,
+  [data-menu-button].no-js::after {
+    display: none;
   }
 
   .social {
@@ -1979,16 +2010,15 @@ button,
     font-size: 14px;
     line-height: 19px;
     margin-bottom: 18px;
-    display: none;
-  }
-
-  .contacts ul {
-    display: none;
   }
 
   .contacts a {
     font-size: 14px;
     margin-bottom: 5px;
+  }
+
+  .contacts__list {
+    display: none;
   }
 
   .menu {

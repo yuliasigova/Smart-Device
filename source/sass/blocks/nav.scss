@@ -1,10 +1,10 @@
-// .nav {
-//   @media (min-width: 1024px) {
-//     position: fixed;
-//     width: 100%;
-//     z-index: 3;
-//   }
-// }
+.nav {
+  @media (min-width: 1024px) {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+  }
+}
 
 .nav__wrapper {
   padding-top: 30px;
@@ -33,7 +33,7 @@
   justify-content: center;
 
   @media (max-width: $vp-1023) {
-    padding-right: 11px;
+    padding-right: 19px;
     padding-left: 6vw;
     grid-template-columns: repeat(auto-fit, 40px);
     gap: 20px;

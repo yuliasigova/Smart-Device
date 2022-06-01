@@ -26,7 +26,7 @@
     </symbol>
     <symbol id="fb" viewBox="0 0 30 30">
       <path fill-rule="evenodd" clip-rule="evenodd"
-        d="M30 15.0001C30 6.71625 23.2847 0 14.9999 0C6.71532 0 0 6.71625 0 15.0001C0 23.2847 6.71522 30 14.9999 30C23.2847 30 30 23.2848 30 15.0001ZM18.7594 10.3266H16.8263C16.3059 10.3266 15.9403 10.7672 15.9403 11.3166V12.1782H18.7012L18.2541 14.9747H15.9394V22.4709H13.1137V14.9747H11.2388V12.1782H13.1137V10.7522H13.1194C13.1691 9.12656 13.7335 7.57877 16.4869 7.48125V7.47095H18.7594V10.3266Z"/>
+        d="M30 15.0001C30 6.71625 23.2847 0 14.9999 0C6.71532 0 0 6.71625 0 15.0001C0 23.2847 6.71522 30 14.9999 30C23.2847 30 30 23.2848 30 15.0001ZM18.7594 10.3266H16.8263C16.3059 10.3266 15.9403 10.7672 15.9403 11.3166V12.1782H18.7012L18.2541 14.9747H15.9394V22.4709H13.1137V14.9747H11.2388V12.1782H13.1137V10.7522H13.1194C13.1691 9.12656 13.7335 7.57877 16.4869 7.48125V7.47095H18.7594V10.3266Z" />
     </symbol>
     <symbol id="hired" viewBox="0 0 35 35">
       <path
@@ -93,7 +93,7 @@
               <span>+7 (495) 000-52-52</span></a>
           </li>
         </ul>
-        <a class="nav__button" data-navButton="button" href="#">Заказать звонок</a>
+        <a class="nav__button" data-nav-button="button" href="#">Заказать звонок</a>
       </div>
     </nav>
   </header>
@@ -145,8 +145,8 @@
               <use xlink:href="#tag"></use>
             </svg>
             <h3> Персонализация стоимости</h3>
-            <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
-              устраивает.</p>
+            <p>Мы&nbsp;подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту&nbsp;цену, которая
+              Вас устраивает.</p>
           </article>
         </li>
       </ul>
@@ -154,25 +154,26 @@
     <section class="description container">
       <div class="description__wrapper">
         <h2>О компании</h2>
-        <div class="description__container">
-          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с 1997
+        <div class="description__container no-js" data-description="container">
+          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с
+            1997
             года. Выполняем срочные заказы и пилотные образцы до 10 дней.
           </p>
           <p>
             Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
-            </p>
-            <p>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
-              РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
-              светотехники России.</p>
+          </p>
+          <p>Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
+            РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
+            светотехники России.</p>
         </div>
-        <div class="description__box">
+        <div class="description__box no-js" data-description="contaioner">
           <p> Smart Device - это команда профессионалов. Через нас прошло более 1 000 000 клиентов, 70% из которых
             продолжают сотрудничество по сей день. На данный момент насчитывается более 14 офисов по всей стране и 20
             городов присутствия.</p>
           <p> Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
             Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
         </div>
-        <a href="#" data-description="data-description-button">Подробнее</a>
+        <a href="#" data-description-button="button">Подробнее</a>
       </div>
     </section>
     <section class="products">
@@ -192,18 +193,15 @@
                   img/card1-tablet@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 767px)" srcset="img/card1-mobile.webp,
                   img/card1-mobile@2x.webp 2x">
+                <!--1x: 350px; 2x: 700px for desktop-->
+                <!--1x: 670px; 2x: 1340px for tablet -->
+                <!-- 1x: 270px; 2x: 540 for mobile -->
                 <img srcset="
-              !--  1x: 350px-->
               img/card1-desktop.jpg 350w,
-              !--  1x: 670px-->
               img/card1-tablet.jpg 670w,
-              !--  1x: 270px-->
               img/card1-mobile.jpg 270w,
-              !--  2x: 700px-->
               img/card1-desktop@2x.jpg 700w,
-              !--  2x: 1340px-->
               img/card1-tablet@2x.jpg 1340w,
-              !--  2x: 540px-->
               img/card1-mobile@2x.jpg 540w" sizes="
               (max-width: 768px) 270px,
               (max-width: 1023px) 670px,
@@ -221,18 +219,15 @@
                 img/card2-tablet@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 767px)" srcset="img/card2-mobile.webp,
                 img/card2-mobile@2x.webp 2x">
+                <!--1x: 350px; 2x: 700px for desktop-->
+                <!--1x: 670px; 2x: 1340px for tablet -->
+                <!-- 1x: 270px; 2x: 540 for mobile -->
                 <img srcset="
-              !--  1x: 350px-->
             img/card2-desktop.jpg 350w,
-              !-- 1x: 670px -->
             img/card2-tablet.jpg 670w,
-              !-- 1x: 270px -->
             img/card2-mobile.jpg 270w,
-              !-- 2x: 700px -->
             img/card2-desktop@2x.jpg 700w,
-              !-- 2x: 1340px -->
             img/card2-tablet@2x.jpg 1340w,
-              !-- 2x: 540px -->
             img/card2-mobile@2x.jpg 540w" sizes="
             (max-width: 768px) 270px,
             (max-width: 1023px) 670px,
@@ -250,18 +245,15 @@
                   img/card3-tablet@2x.webp 2x">
                 <source type="image/webp" media="(max-width: 767px)" srcset="img/card3-mobile.webp,
                   img/card3-mobile@2x.webp 2x">
+                <!--1x: 350px; 2x: 700px for desktop-->
+                <!--1x: 670px; 2x: 1340px for tablet -->
+                <!-- 1x: 270px; 2x: 540 for mobile -->
                 <img srcset="
-              !--  1x: 350px-->
               img/card3-desktop.jpg 350w,
-              !--  1x: 670px-->
               img/card3-tablet.jpg 670w,
-              !--  1x: 270px-->
               img/card3-mobile.jpg 270w,
-              !--  2x: 700px-->
               img/card3-desktop@2x.jpg 700w,
-              !--  2x: 1340px-->
               img/card3-tablet@2x.jpg 1340w,
-              !--  2x: 540px-->
               img/card3-mobile@2x.jpg 540w" sizes="
               (max-width: 768px) 270px,
               (max-width: 1023px) 670px,
@@ -276,21 +268,21 @@
       <div class="application__wrapper container">
         <h2>Остались вопросы? Задайте их нам!</h2>
         <p>Мы проконсультируем Вас бесплатно</p>
-        <form class="application__form form">
+        <form class="application__form form" action="https://echo.htmlacademy.ru" method="post">
           <div class="form__wrapper">
             <label aria-label="Заполните имя">
-              <input type="text" name="name" placeholder="Имя" required>
+              <input data-form-input="text" type="text" name="name" placeholder="Имя" required>
             </label>
             <label aria-label="Заполните телефон">
-              <input type="tel" name="tel" placeholder="Телефон" pattern="^[1-9]+[0-9]*$" required>
+              <input data-type="form-tel" type="tel" name="tel" placeholder="Телефон" required>
             </label>
           </div>
           <label aria-label="Оставьте вопрос">
-            <textarea name="text" placeholder="Ваш вопрос" required></textarea>
+            <textarea data-form-text = "text" name="text" placeholder="Ваш вопрос" required></textarea>
           </label>
           <div class="form__container">
             <label aria-label="Поставьте отметку">
-              <input type="checkbox" required>
+              <input data-form-checkbox = "checkbox" type="checkbox" name="check" required>
               <span>Я согласен на обработку<br> персональных данных</span>
             </label>
             <button type="submit">Задать вопрос</button>
@@ -332,9 +324,9 @@
       </div>
       <nav class="footer__menu menu" data-menu="menu">
         <h3>Разделы сайта</h3>
-        <button class="menu__button is-close" data-button="button" type="button" aria-label="Открыть меню">
+        <button class="menu__button no-js" data-menu-button="button" type="button" aria-label="Открыть меню">
         </button>
-        <ul data-menu="menu">
+        <ul class="menu__list no-js" data-menu-list="menu">
           <li>
             <a href="#">О Компаниии</a>
           </li>
@@ -360,45 +352,50 @@
       </nav>
       <div class="footer__contacts contacts" data-menu="menu">
         <h3>Наш офис</h3>
-        <button class="contacts__button is-close" data-button="button" type="button" aria-label="Открыть меню">
+        <button class="contacts__button no-js" data-menu-button="button" type="button" aria-label="Открыть меню">
         </button>
-        <address>г. Мытищи, Олимпийский проспект, д.10</address>
-        <ul>
-          <li>
-            <a href="tel:84955894050">+7 (495) 589-40-50</a>
-          </li>
-          <li>
-            <a href="tel:89253895829">+7 (925) 389-58-29</a>
-          </li>
-          <li>
-            <a href="tel:89253647813">+7 (925) 364-78-13</a>
-          </li>
-        </ul>
+        <div class="contacts__list no-js" data-menu-list="contacts">
+          <address>г. Мытищи, Олимпийский проспект, д.10</address>
+          <ul>
+            <li>
+              <a href="tel:84955894050">+7 (495) 589-40-50</a>
+            </li>
+            <li>
+              <a href="tel:89253895829">+7 (925) 389-58-29</a>
+            </li>
+            <li>
+              <a href="tel:89253647813">+7 (925) 364-78-13</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </footer>
+
   <section class="modal">
-    <button data-modal="modal__button"></button>
-    <h2>Закажите звонок</h2>
-    <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
-    <form class="form">
-      <label aria-label="Заполните имя">
-        <input data-modalInput="text"type="text" name="name" placeholder="Имя" required>
-      </label>
-      <label aria-label="Заполните телефон">
-        <input type="tel" name="tel" placeholder="Телефон" pattern="^\+7\s?[0-7|9]?[0-9]{2}\s?[0-9]{3}\s?[0-9]{2}\s?[0-9]{2}" required>
-      </label>
-      <label aria-label="Оставьте вопрос">
-        <textarea name="text" placeholder="Ваш вопрос" required></textarea>
-      </label>
-      <div class="modal__block">
-        <label aria-label="Поставьте отметку">
-          <input type="checkbox" required>
-          <span>Я согласен на обработку персональных данных</span>
+    <div class="modal__container">
+      <button data-modal="modal__button"></button>
+      <h2>Закажите звонок</h2>
+      <p>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</p>
+      <form class="form" action="https://echo.htmlacademy.ru" method="post">
+        <label aria-label="Заполните имя">
+          <input data-modal-input="text" type="text" name="name" placeholder="Имя" required>
         </label>
-        <button type="submit">Отправить</button>
-      </div>
-    </form>
+        <label aria-label="Заполните телефон">
+          <input data-type="modal-tel" type="tel" name="tel" placeholder="Телефон" required>
+        </label>
+        <label aria-label="Оставьте вопрос">
+          <textarea data-modal-text = "text" name="text" placeholder="Ваш вопрос" required></textarea>
+        </label>
+        <div class="modal__block">
+          <label aria-label="Поставьте отметку">
+            <input data-modal-checkbox="checkbox" type="checkbox" name="check" required>
+            <span>Я согласен на обработку персональных данных</span>
+          </label>
+          <button type="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
   </section>
   <script src="js/main.js"></script>
 </body>

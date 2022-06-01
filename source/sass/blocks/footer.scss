@@ -32,7 +32,7 @@
   margin: 0;
 }
 
-[data-button="button"].is-close {
+[data-menu-button] {
   display: none;
 
   @media (max-width: $vp-767) {
@@ -65,16 +65,8 @@
   }
 }
 
-[data-menu="menu"].is-active ul {
-  display: block;
-}
-
-[data-menu="menu"].is-active address {
-  display: block;
-}
-
-[data-button="button"].is-active {
-
+[data-menu-button].is-active,
+[data-menu-button].no-js {
   @media (max-width: $vp-767) {
     display: block;
     position: absolute;
@@ -97,6 +89,14 @@
       top: 4px;
       right: 10px;
     }
+
+    &::after {
+      display: none;
+    }
   }
 }
 
+[data-menu-list].is-active,
+[data-menu-list].no-js {
+  display: block;
+}

@@ -1,68 +1,60 @@
-const descriptionBox = document.querySelector('.description__box');
-const descriptionContainer = document.querySelector('.description__container');
+import openPopup from './popup';
 
-document.body.addEventListener('click', (evt) => {
-  const button = document.querySelector('[data-description]');
-  if (evt.target === button) {
-    evt.preventDefault();
-    descriptionBox.classList.toggle('is-active');
-    descriptionContainer.classList.toggle('is-active');
-  }
-});
-
-const menuClick = () => {
-  const menu = document.querySelectorAll('[data-menu]');
-  const buttonsMenu = document.querySelectorAll('[data-button]');
-  const footer = document.querySelector('.footer');
-  footer.addEventListener('click', (evt) => {
-    if (evt.target.type === 'button') {
-      let buttonActive = evt.target;
-      let menuActive = evt.target.closest('[data-menu]');
-      if (buttonActive.classList.contains('is-close')) {
-        buttonActive.classList.remove('is-close');
-        buttonActive.classList.add('is-active');
-      } else {
-        buttonActive.classList.remove('is-active');
-        buttonActive.classList.add('is-close');
+const openDescription = () => {
+  const descriptionBox = document.querySelectorAll('[data-description]');
+  const button = document.querySelector('[data-description-button]');
+  descriptionBox.forEach((box) => {
+    if (box.classList.contains('no-js')) {
+      box.classList.remove('no-js');
+      if (button) {
+        button.addEventListener('click', (evt) => {
+          evt.preventDefault();
+          box.classList.toggle('is-active');
+        });
       }
-      menu.forEach((list) => {
-        if (list.classList.contains('is-active') && !menuActive.classList.contains('is-active')) {
-          list.classList.remove('is-active');
-          buttonsMenu.forEach((button) => {
-            if (button.classList.contains('is-active') && buttonActive.classList.contains('is-active')) {
-              button.classList.remove('is-active');
-              button.classList.add('is-close');
-              buttonActive.classList.remove('is-close');
-              buttonActive.classList.add('is-active');
-            }
-          });
-        }
-      });
-      menuActive.classList.toggle('is-active');
     }
   });
 };
 
-menuClick();
+const openAccordion = () => {
+  const menu = document.querySelectorAll('[data-menu]');
+  const buttonsMenu = document.querySelectorAll('[data-menu-button]');
+  const listsMenu = document.querySelectorAll('[data-menu-list]');
+  buttonsMenu.forEach((buttonMenu) => {
+    if (buttonMenu.classList.contains('no-js')) {
+      buttonMenu.classList.remove('no-js');
+    }
+  });
+  listsMenu.forEach((listMenu) => {
+    if (listMenu.classList.contains('no-js')) {
+      listMenu.classList.remove('no-js');
+    }
+  });
+  menu.forEach((list) => {
+    const buttonActive = list.querySelector('[data-menu-button]');
+    const menuActive = list.querySelector('[data-menu-list]');
 
-const openPopup = () => {
-  const buttonPopup = document.querySelector('[data-navButton]');
-  const popup = document.querySelector('.modal');
-  const button = popup.querySelector('[data-modal]');
-  const inputText = popup.querySelector('[data-modalInput]');
-  if (buttonPopup) {
-    buttonPopup.addEventListener('click', (evt) => {
-      evt.preventDefault();
-      popup.classList.add('is-active');
-      inputText.focus();
-      // document.body.classList.add('body--overlay');
-      document.body.style.overflow = 'hidden';
+    buttonActive.addEventListener('click', () => {
+      if (buttonActive.classList.contains('is-active')) {
+        buttonActive.classList.remove('is-active');
+      } else {
+        buttonsMenu.forEach((button) => {
+          button.classList.remove('is-active');
+        });
+        buttonActive.classList.add('is-active');
+      }
+      if (menuActive.classList.contains('is-active')) {
+        menuActive.classList.remove('is-active');
+      } else {
+        listsMenu.forEach((accordionList) => {
+          accordionList.classList.remove('is-active');
+        });
+        menuActive.classList.add('is-active');
+      }
     });
-  }
-  button.addEventListener('click', () => {
-    popup.classList.remove('is-active');
-    document.body.style.overflow = 'auto';
   });
 };
 
+openDescription();
 openPopup();
+openAccordion();
