@@ -139,7 +139,7 @@
   }
 }
 
-.product__span {
+.products__span {
   &--is-desktop {
     @media (max-width: $vp-767) {
       display: none;
