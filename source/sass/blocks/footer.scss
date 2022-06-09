@@ -9,8 +9,12 @@
 
 .footer__wrapper {
   display: grid;
-  grid-template-columns: 215px minmax(400px, 600px) 1fr;
+  grid-template-columns: auto 1fr auto;
   grid-column-gap: 30px;
+
+  @media (max-width: 1222px) {
+    grid-template-columns: 215px 1fr 1fr;
+  }
 
   @media (max-width: $vp-1023) {
     grid-template-columns: 1fr 1fr;

@@ -12,7 +12,6 @@
   }
 
   @media (max-width: $vp-767) {
-    margin-top: 38px;
     padding-top: 47px;
     padding-bottom: 85px;
   }
@@ -43,7 +42,7 @@
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 350px);
+  grid-template-columns: repeat(3, minmax(250px, 350px));
   grid-column-gap: 85px;
   grid-row-gap: 30px;
   justify-content: center;
@@ -53,7 +52,7 @@
   }
 
   @media (max-width: $vp-767) {
-    grid-template-columns: repeat(auto-fit, 270px);
+    grid-template-columns: repeat(auto-fit, 100%);
   }
 }
 
@@ -98,7 +97,8 @@
 }
 
 .products img {
-  width: 350px;
+  width: 100%;
+  object-fit: cover;
   height: 650px;
 
   @media (max-width: $vp-1023) {
@@ -107,7 +107,8 @@
   }
 
   @media (max-width: $vp-767) {
-    width: 270px;
+    width: 100%;
+    object-fit: cover;
     height: 250px;
   }
 }

@@ -15,6 +15,9 @@ const openPopup = () => {
   const inputCheckboxForm = document.querySelector('[data-form-checkbox]');
   const formModal = popup.querySelector('.form');
   const form = inputForm.closest('.form');
+  const main = document.querySelector('main');
+  const footer = document.querySelector('footer');
+  const header = document.querySelector('header');
 
   if (buttonPopup) {
     buttonPopup.addEventListener('click', (evt) => {
@@ -23,6 +26,9 @@ const openPopup = () => {
       inputText.focus();
       popupOverlay.classList.add('modal__overlay');
       document.body.style.overflow = 'hidden';
+      main.setAttribute('inert', 'true');
+      footer.setAttribute('inert', 'true');
+      header.setAttribute('inert', 'true');
     });
   }
 
@@ -89,6 +95,9 @@ const openPopup = () => {
     popup.classList.remove('is-active');
     document.body.style.overflow = 'auto';
     popupOverlay.classList.remove('modal__overlay');
+    main.removeAttribute('inert');
+    footer.removeAttribute('inert');
+    header.removeAttribute('inert');
   };
 
   button.addEventListener('click', removePopup);

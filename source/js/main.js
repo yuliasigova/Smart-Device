@@ -34,7 +34,7 @@ const openAccordion = () => {
     const buttonActive = list.querySelector('[data-menu-button]');
     const menuActive = list.querySelector('[data-menu-list]');
 
-    buttonActive.addEventListener('click', () => {
+    list.addEventListener('click', () => {
       if (buttonActive.classList.contains('is-active')) {
         buttonActive.classList.remove('is-active');
       } else {

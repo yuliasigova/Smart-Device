@@ -4,6 +4,11 @@
     width: 100%;
     z-index: 3;
   }
+
+  @media (max-width: $vp-1023) {
+    position: absolute;
+    width: 100%;
+  }
 }
 
 .nav__wrapper {
@@ -42,7 +47,8 @@
   }
 
   @media (max-width: $vp-767) {
-    padding-right: 0;
+    padding-right: 11px;
+    padding-top: 7px;
   }
 }
 
@@ -103,9 +109,10 @@
   padding: 10px 15px;
   border: 1px solid $color-alice-blue;
   border-radius: 3px;
-  align-self: center;
+  align-self: flex-start;
   letter-spacing: 0.05em;
   margin-right: 63px;
+  margin-top: 5px;
 
   @media (max-width: $vp-1023) {
     display: none;

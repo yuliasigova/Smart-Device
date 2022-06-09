@@ -1,6 +1,11 @@
 .menu {
-  padding-top: 7px;
-  padding-left: 6.9vw;
+  @media (min-width: 1024px) {
+    padding-top: 7px;
+    display: grid;
+    justify-content: end;
+    min-width: 470px;
+    max-width: 600px;
+  }
 
   @media (max-width: $vp-1023) {
     padding: 0;
@@ -19,10 +24,9 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  margin-top: 20px;
-  columns: 2;
+  margin-top: 10px;
+  columns: 2 220px;
   column-gap: 27px;
-
 
   @media (max-width: $vp-1023) {
     height: auto;
@@ -35,13 +39,8 @@
   }
 }
 
-.menu li {
-  break-inside: avoid;
-  width: 220px;
-}
-
 .menu a {
-  display: block;
+  display: flex;
   color: $color-white--70;
   margin-bottom: 8px;
 

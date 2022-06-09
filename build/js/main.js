@@ -5388,7 +5388,7 @@ var openAccordion = function openAccordion() {
   menu.forEach(function (list) {
     var buttonActive = list.querySelector('[data-menu-button]');
     var menuActive = list.querySelector('[data-menu-list]');
-    buttonActive.addEventListener('click', function () {
+    list.addEventListener('click', function () {
       if (buttonActive.classList.contains('is-active')) {
         buttonActive.classList.remove('is-active');
       } else {
@@ -5443,6 +5443,9 @@ var openPopup = function openPopup() {
   var inputCheckboxForm = document.querySelector('[data-form-checkbox]');
   var formModal = popup.querySelector('.form');
   var form = inputForm.closest('.form');
+  var main = document.querySelector('main');
+  var footer = document.querySelector('footer');
+  var header = document.querySelector('header');
 
   if (buttonPopup) {
     buttonPopup.addEventListener('click', function (evt) {
@@ -5451,6 +5454,9 @@ var openPopup = function openPopup() {
       inputText.focus();
       popupOverlay.classList.add('modal__overlay');
       document.body.style.overflow = 'hidden';
+      main.setAttribute('inert', 'true');
+      footer.setAttribute('inert', 'true');
+      header.setAttribute('inert', 'true');
     });
   }
 
@@ -5518,6 +5524,9 @@ var openPopup = function openPopup() {
     popup.classList.remove('is-active');
     document.body.style.overflow = 'auto';
     popupOverlay.classList.remove('modal__overlay');
+    main.removeAttribute('inert');
+    footer.removeAttribute('inert');
+    header.removeAttribute('inert');
   };
 
   button.addEventListener('click', removePopup);

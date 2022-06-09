@@ -99,18 +99,20 @@
     </nav>
   </header>
   <main>
-    <section class="caption container">
-      <h1>Печатные платы</h1>
+    <section class="caption">
+      <div class="caption__wrapper container">
+        <h1>Печатные платы</h1>
       <p>производство и монтаж, поставка комплектующих, блоков и модулей</p>
       <a href="#form">
         <span class="caption__link caption__link--desktop">Получить бесплатную консультацию</span>
         <span class="caption__link caption__link--mobile">Бесплатная консультация</span>
       </a>
+      </div>
     </section>
     <section class="advantage container">
       <h2 class="visually-hidden">Наши преимущества</h2>
       <ul>
-        <li tabindex="0">
+        <li>
           <article class="advantage__card">
             <svg width="35" height="35">
               <use xlink:href="#watch"></use>
@@ -120,7 +122,7 @@
               заказы плат и комплектующих в самые короткие сроки</p>
           </article>
         </li>
-        <li tabindex="0">
+        <li>
           <article class="advantage__card">
             <svg width="35" height="35">
               <use xlink:href="#hired"></use>
@@ -131,7 +133,7 @@
             </p>
           </article>
         </li>
-        <li tabindex="0">
+        <li>
           <article class="advantage__card">
             <svg width="35" height="35">
               <use xlink:href="#detective"></use>
@@ -140,7 +142,7 @@
             <p>По желанию клиента мы обеспечиваем полную конфеденциальность. </p>
           </article>
         </li>
-        <li tabindex="0">
+        <li>
           <article class="advantage__card">
             <svg width="35" height="35">
               <use xlink:href="#tag"></use>
@@ -275,7 +277,7 @@
               <input aria-label="Заполните имя" data-form-input="text" type="text" name="name" placeholder="Имя" required>
             </label>
             <label aria-label="Заполните телефон">
-              <input aria-label="Заполните телефон" data-type="form-tel" type="tel" name="tel" placeholder="Телефон" required>
+              <input aria-label="Заполните телефон" data-type="form-tel" type="tel" name="tel" placeholder="Телефон" minlength="16" required>
             </label>
           </div>
           <label aria-label="Оставьте вопрос">
@@ -335,7 +337,7 @@
             <a href="#">Продукты</a>
           </li>
           <li>
-            <a href="#">Производство печатных плат</a>
+            <a href="#">Производство печатных<br>плат</a>
           </li>
           <li>
             <a href="#">Монтаж печатных плат</a>
@@ -383,7 +385,7 @@
           <input aria-label="Заполните имя" data-modal-input="text" type="text" name="name" placeholder="Имя" required>
         </label>
         <label aria-label="Заполните телефон">
-          <input aria-label="Заполните телефон" data-type="modal-tel" type="tel" name="tel" placeholder="Телефон" required>
+          <input aria-label="Заполните телефон" data-type="modal-tel" type="tel" name="tel" placeholder="Телефон" minlength="16" required>
         </label>
         <label aria-label="Оставьте вопрос">
           <textarea data-modal-text = "text" name="text" placeholder="Ваш вопрос" required></textarea>

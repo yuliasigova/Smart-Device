@@ -93,6 +93,7 @@
   order: -1;
   border-radius: 3px;
   width: 100%;
+  max-width: 270px;
 
   @media (max-width: $vp-1023) {
     padding-bottom: 11px;
@@ -109,8 +110,13 @@
   align-items: center;
   padding-top: 17px;
 
+  @media (max-width: $vp-1023) {
+    padding-top: 7px;
+  }
+
   @media (max-width: $vp-767) {
     padding-left: 6px;
+    padding-top: 0;
   }
 }
 

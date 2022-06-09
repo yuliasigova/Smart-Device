@@ -29,19 +29,16 @@
   padding: 40px;
   min-height: 300px;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: $color-deep-sky-blue;
     color: $color-alice-blue;
   }
 
-  &:hover h3,
-  &:focus h3 {
+  &:hover h3 {
     color: $color-alice-blue;
   }
 
-  &:hover svg,
-  &:focus svg {
+  &:hover svg {
     fill: $color-alice-blue;
   }
 

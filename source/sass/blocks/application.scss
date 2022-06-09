@@ -6,6 +6,36 @@
   position: relative;
   overflow: hidden;
 
+  @media (min-width: 1220px) {
+    &::before {
+      content: "";
+      position: absolute;
+      background-image: url("../img/svg/polygon.svg");
+      width: 200%;
+      height: 200%;
+      top: -87px;
+      left: 0;
+      background-repeat: no-repeat;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: image-set(
+        url("../img/paper-airplane2x.webp") 2x,
+        url("../img/paper-airplane.webp") 1x,
+        url("../img/paper-airplane2x.png") 2x,
+        url("../img/paper-airplane.png") 1x
+      );
+      width: 510px;
+      height: 285px;
+      top: 29%;
+      right: 55%;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
   @media (min-width: 1024px) {
     &::before {
       content: "";
@@ -25,12 +55,12 @@
         url("../img/paper-airplane2x.webp") 2x,
         url("../img/paper-airplane.webp") 1x,
         url("../img/paper-airplane2x.png") 2x,
-        url("../img/paper-airplane.png") 1x,
+        url("../img/paper-airplane.png") 1x
       );
-      width: 510px;
+      width: 370px;
       height: 285px;
       top: 29%;
-      right: 55%;
+      right: 63%;
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -53,7 +83,7 @@
   padding-right: 11px;
 
   @media (max-width: $vp-1023) {
-    justify-content: left;
+    justify-content: center;
   }
 
   @media (max-width: $vp-767) {
@@ -68,12 +98,14 @@
   font-size: 36px;
   line-height: 51px;
   margin-bottom: 15px;
+  z-index: 2;
 
   @media (max-width: $vp-1023) {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
 
   @media (max-width: $vp-767) {
+    margin-bottom: 8px;
     font-size: 30px;
     line-height: 42px;
   }
@@ -82,6 +114,7 @@
 .application p {
   margin: 0;
   margin-bottom: 35px;
+  z-index: 2;
 
   @media (max-width: $vp-1023) {
     margin-bottom: 25px;
@@ -107,7 +140,7 @@
   }
 
   @media (max-width: $vp-767) {
-    width: 270px;
+    width: 100%;
     margin: 0 auto;
   }
 }
