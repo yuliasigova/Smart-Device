@@ -13,8 +13,8 @@ const openPopup = () => {
   const inputTelForm = document.querySelector('[data-type="form-tel"]');
   const textAreaForm = document.querySelector('[data-form-text]');
   const inputCheckboxForm = document.querySelector('[data-form-checkbox]');
-  const formModal = popup.querySelector('.form');
-  const form = inputForm.closest('.form');
+  const formModal = inputText.closest('form');
+  const form = inputForm.closest('form');
   const main = document.querySelector('main');
   const footer = document.querySelector('footer');
   const header = document.querySelector('header');
@@ -30,6 +30,12 @@ const openPopup = () => {
       footer.setAttribute('inert', 'true');
       header.setAttribute('inert', 'true');
     });
+    if (formModal) {
+      formModal.addEventListener('submit', (evt) => {
+        evt.preventDefault();
+        keepData(inputText, inputTel, inputCheckbox, textArea);
+      });
+    }
   }
 
   document.body.addEventListener('keydown', (evt) => {
@@ -41,42 +47,21 @@ const openPopup = () => {
     }
   });
 
-  if (popup.classList.contains('is-active')) {
-    formModal.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      const data = {
-        'name': inputText.value,
-        'tel': inputTel.value,
-        'checkbox': inputCheckbox.value,
-      };
-      const successRequest = () => {
-        inputText.value = '';
-        inputTel.value = '';
-        inputCheckbox.checked = '';
-        textArea.value = '';
-      };
-      localStorage.setItem('data', JSON.stringify(data));
-      sendData(JSON.stringify(data), successRequest);
-    });
-  } else {
-    form.addEventListener('submit', (evt) => {
-      evt.preventDefault();
-      const data = {
-        'name': inputForm.value,
-        'tel': inputTelForm.value,
-        'checkbox': inputCheckboxForm.value,
-      };
-      const successRequest = () => {
-        inputForm.value = '';
-        inputTelForm.value = '';
-        inputCheckboxForm.checked = '';
-        textAreaForm.value = '';
-      };
-      localStorage.setItem('data', JSON.stringify(data));
-      sendData(JSON.stringify(data), successRequest);
-    });
-  }
-
+  const keepData = (text, tel, checkbox, textarea) => {
+    const data = {
+      name: text.value,
+      tel: tel.value,
+      checkbox: checkbox.value,
+    };
+    const successRequest = () => {
+      text.value = '';
+      tel.value = '';
+      checkbox.checked = '';
+      textarea.value = '';
+    };
+    localStorage.setItem('data', JSON.stringify(data));
+    sendData(JSON.stringify(data), successRequest);
+  };
 
   const sendData = (body, success) => {
     fetch('https://echo.htmlacademy.ru', {
@@ -90,6 +75,11 @@ const openPopup = () => {
           throw new Error('Can\'t add contact data');
         });
   };
+
+  form.addEventListener('submit', (evt) => {
+    evt.preventDefault();
+    keepData(inputForm, inputTelForm, inputCheckboxForm, textAreaForm);
+  });
 
   const removePopup = () => {
     popup.classList.remove('is-active');
@@ -109,7 +99,6 @@ const openPopup = () => {
   });
 };
 
-
 const addMask = () => {
   const inputs = document.querySelectorAll('[data-type]');
   // eslint-disable-next-line new-cap
@@ -117,6 +106,5 @@ const addMask = () => {
 };
 
 addMask();
-
 
 export default openPopup;

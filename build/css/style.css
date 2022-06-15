@@ -671,6 +671,7 @@ button,
 
 .caption__wrapper {
   padding-left: 125px;
+  padding-bottom: 20px;
 }
 
 .caption h1 {
@@ -707,6 +708,7 @@ button,
   border-radius: 3px;
   text-align: center;
   width: 410px;
+  margin-bottom: 20px;
 }
 
 .caption a:hover,

@@ -74,6 +74,7 @@
 
 .caption__wrapper {
   padding-left: 125px;
+  padding-bottom: 20px;
 
   @media (max-width: $vp-767) {
     display: grid;
@@ -139,6 +140,7 @@
   border-radius: 3px;
   text-align: center;
   width: 410px;
+  margin-bottom: 20px;
 
   @media (max-width: $vp-1023) {
     margin-left: 44px;

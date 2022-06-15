@@ -5441,8 +5441,8 @@ var openPopup = function openPopup() {
   var inputTelForm = document.querySelector('[data-type="form-tel"]');
   var textAreaForm = document.querySelector('[data-form-text]');
   var inputCheckboxForm = document.querySelector('[data-form-checkbox]');
-  var formModal = popup.querySelector('.form');
-  var form = inputForm.closest('.form');
+  var formModal = inputText.closest('form');
+  var form = inputForm.closest('form');
   var main = document.querySelector('main');
   var footer = document.querySelector('footer');
   var header = document.querySelector('header');
@@ -5458,6 +5458,13 @@ var openPopup = function openPopup() {
       footer.setAttribute('inert', 'true');
       header.setAttribute('inert', 'true');
     });
+
+    if (formModal) {
+      formModal.addEventListener('submit', function (evt) {
+        evt.preventDefault();
+        keepData(inputText, inputTel, inputCheckbox, textArea);
+      });
+    }
   }
 
   document.body.addEventListener('keydown', function (evt) {
@@ -5469,45 +5476,23 @@ var openPopup = function openPopup() {
     }
   });
 
-  if (popup.classList.contains('is-active')) {
-    formModal.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      var data = {
-        'name': inputText.value,
-        'tel': inputTel.value,
-        'checkbox': inputCheckbox.value
-      };
+  var keepData = function keepData(text, tel, checkbox, textarea) {
+    var data = {
+      name: text.value,
+      tel: tel.value,
+      checkbox: checkbox.value
+    };
 
-      var successRequest = function successRequest() {
-        inputText.value = '';
-        inputTel.value = '';
-        inputCheckbox.checked = '';
-        textArea.value = '';
-      };
+    var successRequest = function successRequest() {
+      text.value = '';
+      tel.value = '';
+      checkbox.checked = '';
+      textarea.value = '';
+    };
 
-      localStorage.setItem('data', JSON.stringify(data));
-      sendData(JSON.stringify(data), successRequest);
-    });
-  } else {
-    form.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-      var data = {
-        'name': inputForm.value,
-        'tel': inputTelForm.value,
-        'checkbox': inputCheckboxForm.value
-      };
-
-      var successRequest = function successRequest() {
-        inputForm.value = '';
-        inputTelForm.value = '';
-        inputCheckboxForm.checked = '';
-        textAreaForm.value = '';
-      };
-
-      localStorage.setItem('data', JSON.stringify(data));
-      sendData(JSON.stringify(data), successRequest);
-    });
-  }
+    localStorage.setItem('data', JSON.stringify(data));
+    sendData(JSON.stringify(data), successRequest);
+  };
 
   var sendData = function sendData(body, success) {
     fetch('https://echo.htmlacademy.ru', {
@@ -5519,6 +5504,11 @@ var openPopup = function openPopup() {
       throw new Error('Can\'t add contact data');
     });
   };
+
+  form.addEventListener('submit', function (evt) {
+    evt.preventDefault();
+    keepData(inputForm, inputTelForm, inputCheckboxForm, textAreaForm);
+  });
 
   var removePopup = function removePopup() {
     popup.classList.remove('is-active');
